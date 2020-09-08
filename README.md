@@ -1,14 +1,12 @@
-# Uploading-Files-to-Google-Drive-Javascript-PHP-Google-Drive-API
-
-A very simple web application to upload files into google drive using PHP, JS and Google Drive API version 2.
+SSD Assignment 2 - OAuth 2.0 Authorization test for google drive.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine.
 
 ## Prerequisites
 
-This project is web-based. Therefore you need to set up a web server on your local machine.
+This project is web-based. Therefore need to set up a web server on your local machine.
 
 ## Installation
 
@@ -27,6 +25,9 @@ Copy all files & directories inside this repository into your project folder.
 2. Create a web project OAuth Client ID in [Google Developers Console](https://console.developers.google.com/) and get your client id and client secret. 
 
 For authorized JavaScript origins, just provide localhost for the first field and the second field is important it needs to be the same for your project you can have different redirect URL. It is basically the URL to which Google redirects you whenever the user grants access to your application. Select it cautiously it needs to be the same for your project.
+
+Current set up is done using Apache server but the server is hosted in an ip adress http://192.168.64.2/ therefore when specifying  the redirect url javascript origins has used xip.io as wildcard dns for ip addresses.
+But if we are using the localhost it won't be an issue. Otherwise it's really important to add .xip.io at the end of the ip address.
 
 > Make sure that you have enabled API services ([Guide](https://support.google.com/googleapi/answer/6158841?hl=en)).
 
@@ -62,8 +63,3 @@ For authorized JavaScript origins, just provide localhost for the first field an
     var client_id = ""// replace it with your client id;
 
 ```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
