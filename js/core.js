@@ -5,12 +5,12 @@ $(document).ready(function(){
      
      // client id of the project
 
-     var clientId = "30577338934-gr44qm3k4vga34bc2lkrmfbsjbuidkgd.apps.googleusercontent.com";
+     var clientId = "34840218804-6tu4spu6a7121pk4gbt09tkbb466ecfa.apps.googleusercontent.com";
 
      // redirect_uri of the project
 
-     var redirect_uri = "http://localhost/DriveSubmIt/modules/submit.html";
-
+     var redirect_uri = "http://192.168.64.2.xip.io/DriveSubmIt/modules/submit.html";
+   
      // scope of the project
 
      var scope = "https://www.googleapis.com/auth/drive";

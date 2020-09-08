@@ -3,11 +3,12 @@ $(document).ready(function(){
 
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
-    const redirect_uri = "http://localhost/DriveSubmIt/modules/submit.html"; // replace with your redirect_uri;
-    const client_secret = "K8GwJehD8DAYfIkaEWUQMClR"; // replace with your client secret
+    const redirect_uri = "http://192.168.64.2.xip.io/DriveSubmIt/modules/submit.html"; // replace with your redirect_uri;
+    
+    const client_secret = "HxtwKpr33ktGhuOFpRQUI6G1"; // replace with your client secret
     const scope = "https://www.googleapis.com/auth/drive";
     var access_token= "";
-    var client_id = "30577338934-gr44qm3k4vga34bc2lkrmfbsjbuidkgd.apps.googleusercontent.com";// replace it with your client id;
+    var client_id = "34840218804-6tu4spu6a7121pk4gbt09tkbb466ecfa.apps.googleusercontent.com";// replace it with your client id;
     
 
     $.ajax({
@@ -26,9 +27,9 @@ $(document).ready(function(){
            localStorage.setItem("accessToken",resultData.access_token);
            localStorage.setItem("refreshToken",resultData.refreshToken);
            localStorage.setItem("expires_in",resultData.expires_in);
-           window.history.pushState({}, document.title, "/DriveSubmIt/modules/" + "submit.html");
+        // window.history.pushState({}, document.title, "/DriveSubmIt/modules/" + "submit.html");
            
-           
+        window.history.pushState({}, document.title, "" + "submit.html");
            
            
         }
@@ -105,7 +106,20 @@ $(document).ready(function(){
         $(progress_bar_id + " .progress-bar").css("width", +percent + "%");
         $(progress_bar_id + " .status").text(percent + "%");
     };
-
+/*
+    Upload.prototype.progressHandling = function (event) {
+        var percent = 0;
+        var position = event.loaded || event.position;
+        var total = event.total;
+        var progress_bar_class = "progress";
+        if (event.lengthComputable) {
+            percent = Math.ceil(position / total * 100);
+        }
+        // update progressbars classes so it fits your code
+        $(progress_bar_class + " .progress").css("width", +percent + "%");
+        $(progress_bar_class + " .progress-done").text(percent + "%");
+    };
+*/
     $("#upload").on("click", function (e) {
         var file = $("#files")[0].files[0];
         var upload = new Upload(file);
@@ -116,7 +130,12 @@ $(document).ready(function(){
         upload.doUpload();
     });
 
+    //pb
 
+    const progress = document.querySelector('.progress-done');
 
+    progress.style.width = progress.getAttribute('data-done') + '%';
+    progress.style.opacity = 1;
+    
     
 });
